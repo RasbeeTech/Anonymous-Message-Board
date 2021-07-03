@@ -36,7 +36,7 @@ class MessageBoard {
               foundThread.bumped_on = newReply.created_on;
               foundThread.save((err) => {
                 if(err) done('Somehting went wrong');
-                done(null, {response: 'success'});
+                done(null, newReply);
               });
             }
           });
@@ -134,7 +134,7 @@ class MessageBoard {
                 if(err){
                   return done('Something went wrong');
                 } else {
-                  return done(null, 'success');
+                  return done(null, 'reported');
                 }
               })
             }
@@ -154,7 +154,7 @@ class MessageBoard {
                 if(err) {
                   return done('Something went wrong');
                 } else {
-                  return done(null, 'success')
+                  return done(null, 'reported')
                 }
               });
             }
